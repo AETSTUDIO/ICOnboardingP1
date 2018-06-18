@@ -201,9 +201,23 @@
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806180443432_InitalDataModels.cs" />
+    <Compile Include="Migrations\201806180443432_InitalDataModels.Designer.cs">
+      <DependentUpon>201806180443432_InitalDataModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806180544304_AmendDataModels.cs" />
+    <Compile Include="Migrations\201806180544304_AmendDataModels.Designer.cs">
+      <DependentUpon>201806180544304_AmendDataModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806180631003_AddAnnotationsToModels.cs" />
+    <Compile Include="Migrations\201806180631003_AddAnnotationsToModels.Designer.cs">
+      <DependentUpon>201806180631003_AddAnnotationsToModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -311,6 +325,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+    <Content Include="Views\Products\Delete.cshtml" />
+    <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,6 +344,17 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806180443432_InitalDataModels.resx">
+      <DependentUpon>201806180443432_InitalDataModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806180544304_AmendDataModels.resx">
+      <DependentUpon>201806180544304_AmendDataModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806180631003_AddAnnotationsToModels.resx">
+      <DependentUpon>201806180631003_AddAnnotationsToModels.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
