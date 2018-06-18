@@ -6,12 +6,13 @@ using System.Web.Mvc;
 
 namespace ICOnboardingP1.Controllers
 {
-    public class HomeController : Controller
+    public class CustomersController : Controller
     {
-        public ActionResult Index()
+        // GET: Customers
+        public ViewResult Index()
         {
             return View();
         }
+
     }
-      
 }
