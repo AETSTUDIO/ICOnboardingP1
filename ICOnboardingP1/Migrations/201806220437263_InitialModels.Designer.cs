@@ -7,13 +7,13 @@ namespace ICOnboardingP1.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddAnnotationsToModels : IMigrationMetadata
+    public sealed partial class InitialModels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAnnotationsToModels));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModels));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806180631003_AddAnnotationsToModels"; }
+            get { return "201806220437263_InitialModels"; }
         }
         
         string IMigrationMetadata.Source

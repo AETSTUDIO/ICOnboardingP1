@@ -47,6 +47,7 @@ namespace ICOnboardingP1.Controllers
 
             var viewModel = new SalesRecordViewModel
             {
+                ProductSold = new ProductSold(),
                 Customers = customers,
                 Products = products,
                 Stores = stores,

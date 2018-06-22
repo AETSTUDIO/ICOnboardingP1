@@ -25,6 +25,15 @@ namespace ICOnboardingP1.Models
         public DbSet<ProductSold> ProductSolds { get; set; }
         public DbSet<Store> Stores { get; set; }
 
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Customer>()
+        //    .HasOptional<ProductSold>(ps => ps.ProductSold)
+        //    .WithMany()
+        //    .WillCascadeOnDelete(false);
+
+        //}
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

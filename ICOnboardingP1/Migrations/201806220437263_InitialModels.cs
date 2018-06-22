@@ -3,10 +3,58 @@ namespace ICOnboardingP1.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitalDataModels : DbMigration
+    public partial class InitialModels : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Customers",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 100),
+                        Address = c.String(nullable: false, maxLength: 100),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Products",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 100),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.ProductSolds",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        DateSold = c.DateTime(nullable: false),
+                        CustomerId = c.Int(nullable: false),
+                        ProductId = c.Int(nullable: false),
+                        StoreId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Customers", t => t.CustomerId, cascadeDelete: true)
+                .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
+                .ForeignKey("dbo.Stores", t => t.StoreId, cascadeDelete: true)
+                .Index(t => t.CustomerId)
+                .Index(t => t.ProductId)
+                .Index(t => t.StoreId);
+            
+            CreateTable(
+                "dbo.Stores",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 100),
+                        Address = c.String(nullable: false, maxLength: 255),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -83,17 +131,27 @@ namespace ICOnboardingP1.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.ProductSolds", "StoreId", "dbo.Stores");
+            DropForeignKey("dbo.ProductSolds", "ProductId", "dbo.Products");
+            DropForeignKey("dbo.ProductSolds", "CustomerId", "dbo.Customers");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.ProductSolds", new[] { "StoreId" });
+            DropIndex("dbo.ProductSolds", new[] { "ProductId" });
+            DropIndex("dbo.ProductSolds", new[] { "CustomerId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Stores");
+            DropTable("dbo.ProductSolds");
+            DropTable("dbo.Products");
+            DropTable("dbo.Customers");
         }
     }
 }

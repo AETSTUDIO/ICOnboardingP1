@@ -39,7 +39,7 @@
             @Html.DisplayFor(modelItem => item.Store.Name)
         </td>
         <td>
-            @DateTime.Parse(Html.DisplayFor(modelItem => item.DateSold).ToString()).ToShortDateString()
+            @Html.DisplayFor(modelItem => item.DateSold, "{0:d mm yyyy}")
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

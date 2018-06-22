@@ -207,21 +207,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806180443432_InitalDataModels.cs" />
-    <Compile Include="Migrations\201806180443432_InitalDataModels.Designer.cs">
-      <DependentUpon>201806180443432_InitalDataModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806180544304_AmendDataModels.cs" />
-    <Compile Include="Migrations\201806180544304_AmendDataModels.Designer.cs">
-      <DependentUpon>201806180544304_AmendDataModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806180631003_AddAnnotationsToModels.cs" />
-    <Compile Include="Migrations\201806180631003_AddAnnotationsToModels.Designer.cs">
-      <DependentUpon>201806180631003_AddAnnotationsToModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806201323589_UpdateProductSoldModel.cs" />
-    <Compile Include="Migrations\201806201323589_UpdateProductSoldModel.Designer.cs">
-      <DependentUpon>201806201323589_UpdateProductSoldModel.cs</DependentUpon>
+    <Compile Include="Migrations\201806220437263_InitialModels.cs" />
+    <Compile Include="Migrations\201806220437263_InitialModels.Designer.cs">
+      <DependentUpon>201806220437263_InitialModels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -367,17 +355,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806180443432_InitalDataModels.resx">
-      <DependentUpon>201806180443432_InitalDataModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806180544304_AmendDataModels.resx">
-      <DependentUpon>201806180544304_AmendDataModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806180631003_AddAnnotationsToModels.resx">
-      <DependentUpon>201806180631003_AddAnnotationsToModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806201323589_UpdateProductSoldModel.resx">
-      <DependentUpon>201806201323589_UpdateProductSoldModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806220437263_InitialModels.resx">
+      <DependentUpon>201806220437263_InitialModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
